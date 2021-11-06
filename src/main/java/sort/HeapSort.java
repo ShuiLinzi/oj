@@ -24,7 +24,7 @@ public class HeapSort {//heap的堆的意思
         }
     }
 
-    //堆化
+    //堆化//
     public static void heapify(int[] arr, int index, int heapSize) {
         int left = index * 2 + 1;//左孩子的下标
         while (left < heapSize) {//下方还有孩子的时候
