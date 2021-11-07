@@ -1,7 +1,11 @@
 package sort;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class HeapSort {//heap的堆的意思
 
+    //堆排序
     public static void heapSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
@@ -41,10 +45,36 @@ public class HeapSort {//heap的堆的意思
         }
     }
 
-    //堆排序
+
     private static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+    }
+
+
+    //比较器
+    public static class AComp implements Comparator<Integer> {
+        //如果返回负数，认为第一个参数放在上面
+        //如果返回正数，认为第二个参数放在上面
+        //生成大根堆的比较器
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            return o2 - o1;
+        }
+    }
+
+    //Java小根堆的创建
+    public static void main(String[] args) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>(new AComp());
+        heap.add(8);
+        heap.add(1);
+        heap.add(3);
+        heap.add(2);
+        heap.add(0);
+        heap.add(7);
+        while (!heap.isEmpty()) {
+            System.out.println(heap.poll());
+        }
     }
 }
