@@ -39,6 +39,11 @@ public class RadixSort {
         }
     }
 
+    private static int getDigit(int i, int d) {
+
+        return 0;
+    }
+
 
     private static int maxbits(int[] arr) {
         int max = Integer.MIN_VALUE;
