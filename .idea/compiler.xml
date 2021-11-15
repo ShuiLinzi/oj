@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="20211108" />
         <module name="leetcode" />
+        <module name="structure" />
       </profile>
     </annotationProcessing>
   </component>

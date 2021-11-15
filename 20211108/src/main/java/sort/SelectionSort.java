@@ -1,7 +1,5 @@
 package sort;
 
-import com.sun.org.apache.bcel.internal.generic.SWAP;
-
 //选择排序
 public class SelectionSort {
     public static void selectionSort(int[] arr) {
