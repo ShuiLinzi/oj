@@ -34,6 +34,7 @@ public class LeetCode318 {
         LeetCode318 solution = new LeetCode318();
         int i = solution.maxProduct(a);
         System.out.println(i);
-
     }
+
+
 }
