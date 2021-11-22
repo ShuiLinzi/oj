@@ -12,7 +12,7 @@ public class Offer03 {
     public int findRepeatNumber(int[] nums) {
         Set<Integer> dic = new HashSet<>();
         for (int num : nums) {
-            if (dic.contains(num)) //如果set集合里面包含重复的数字，说明存在，直接返回
+            if (dic.contains(num)) //如果set集合里面包含重复的数字，说明存在，直接返回，记住set有contains的api，要学会调用
                 return num;
             dic.add(num); //不存在就继续添加
         }
@@ -20,16 +20,18 @@ public class Offer03 {
     }
 
     //方法二 原地交换（优点，空间复杂度O(n) ,时间复杂度O(1)）
+
+    //
     public int findRepeatNumber2(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-            if (nums[i] == i) {
+            if (nums[i] == i) { //先判断下标和数字是否配对，如果符合 就继续循环
                 i++;
                 continue;
             }
-            if (nums[nums[i]] == nums[i])
+            if (nums[nums[i]] == nums[i]) //此操作是判断是否有重复数字，如果有就返回
                 return nums[i];
-            int temp = nums[i];
+            int temp = nums[i];//如果没有，就交换数字
             nums[i] = nums[temp];
             nums[temp] = temp;
         }
