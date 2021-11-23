@@ -15,9 +15,9 @@ public class Offer53 {
         while (i <= length) {
             int mid = i + (length - i);
             if (nums[mid] <= tar) {
-                i = mid + 1;
+                i = mid + 1;//右边
             } else {
-                length = mid - 1;
+                length = mid - 1;//左边
             }
         }
         return i;//为啥i是右边界的大小呢，因为当i==tar的时候，仍进行了加一操作，所以是目标数字的右边的一个下标
