@@ -20,4 +20,19 @@ public class Offer50 {
 
     }
 
+    //方法二，字符串数组解决问题
+    public char firstUniqChar2(String s) {
+        int[] arr = new int[26];
+        char[] chars = s.toCharArray();
+        for (Character c : chars) {
+            arr[c - 'a']++;
+        }
+        for (Character c : chars) {
+            if (arr[c - 'a'] == 1)
+                return c;
+        }
+
+        return ' ';
+    }
+
 }
