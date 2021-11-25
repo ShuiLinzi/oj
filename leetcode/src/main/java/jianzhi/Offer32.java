@@ -13,7 +13,6 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-
     TreeNode(int x) {
         val = x;
     }
@@ -71,4 +70,32 @@ class Offer32_2 {
         }
         return ans;
     }
+}
+
+//剑指 Offer 32 - III. 从上到下打印二叉树 III
+//请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。
+//https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/
+//解题思路：本题和前两题的区别在于，这一题的奇数层顺序打印，偶数层逆序打印，可以使用双端链表的队列，进行判断打印实现
+class Offer32_3 {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        if (root != null) queue.add(root);
+        while (!queue.isEmpty()) {
+            LinkedList<Integer> tmp = new LinkedList<>();//为啥是linklist呢
+            for (int i = queue.size(); i > 0; i--) {
+                TreeNode node = queue.poll();
+                if (res.size() % 2 == 0)//用res取余2是真的妙啊，因为res是要返回的list，它的长度是固定的，而且确实能有效判断是单数层，或者说是双数层
+                    tmp.addLast(node.val);//size为0的时候，是第一层（奇数），正序输出，size为1的时候，是第二层（偶数），逆序输出
+                else tmp.addFirst(node.val);
+                if (node.left != null)
+                    queue.add(node.left);
+                if (node.right != null)
+                    queue.add(node.right);
+            }
+            res.add(tmp);
+        }
+        return res;
+    }
+
 }
