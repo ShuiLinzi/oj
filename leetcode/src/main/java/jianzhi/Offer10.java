@@ -37,9 +37,24 @@ class Offer10_1 {
 }
 
 //母牛产仔问题
+//解题思路，也是斐波那契的变种，只不过是f(n)=f(n-1)+f(n-3)
 class Offer10_2 {
     public int c(int n) {
-        if (n<1) return 0;
-        return 0;
+        if (n < 1) return 0;
+        if (n == 1 || n == 2 || n == 3) return n;
+        int prepre = 1;
+        int pre = 2;
+        int res = 3;
+        int tmp1, tmp2 = 0;
+        for (int i = 4; i <= n; i++) {
+            tmp1 = pre;
+            tmp2 = res;
+            res = prepre + res;
+            pre = tmp2;
+            prepre = tmp1;
+
+        }
+        return res;
+
     }
 }
