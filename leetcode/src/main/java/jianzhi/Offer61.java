@@ -20,18 +20,18 @@ public class Offer61 {
             if (repeat.contains(num)) return false;
             repeat.add(num);
         }
-        return max - min <5;
+        return max - min < 5;
     }
+
     //解题思路：和上面的解题思路一样，唯一的区别就是nums[nums.length-1] - nums[joker] <5; 理由必须减去nums[joker]，因为[0,0,1,2,5]错误示例，自己理解
     public boolean isStraight2(int[] nums) {
         int joker = 0;
-        Arrays.sort (nums);
-        for(int i = 0;i<nums.length-1;i++){
-            if (nums[i]==0) joker++;
-            else if(nums[i]==nums[i+1]) return  false;
-
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 0) joker++; //用来进行下标判断的
+            else if (nums[i] == nums[i + 1]) return false;//有除开零之外的重复数字，直接返回false，肯定不符合题意
         }
-        return nums[nums.length-1] - nums[joker] <5;
+        return nums[nums.length - 1] - nums[joker] < 5;
     }
 
 }
