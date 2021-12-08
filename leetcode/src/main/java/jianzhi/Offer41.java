@@ -8,6 +8,7 @@ import java.util.Queue;
 // 如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
 //https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/
 //解题思路:其他的都好理解，主要就是借助大小根堆排序，需要研究一下
+//todo 大顶堆，小顶堆需要加强理解,主要是第25行的方法的理解
 public class Offer41 {
 }
 
