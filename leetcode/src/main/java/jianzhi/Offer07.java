@@ -8,7 +8,7 @@ import java.util.HashMap;
 //输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
 //假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 //https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/
-//解题思路:看注释，这题是真的绕，麻了，没答案根本不可能写出来
+//解题思路:看注释，这题是真的绕，麻了，没答案根本不可能写出来，二刷，还是那么妙阿！
 public class Offer07 {
     int[] preorder;
     HashMap<Integer, Integer> dic = new HashMap<>();
