@@ -23,9 +23,5 @@ public class Offer16 {
         return res;
     }
 
-    public static void main(String[] args) {
-        Offer16 offer16 = new Offer16();
-        double v = offer16.myPow(3.0, 7);
-        System.out.println(v);
-    }
+
 }

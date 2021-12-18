@@ -22,4 +22,9 @@ public class Offer53 {
         }
         return i;//为啥i是右边界的大小呢，因为当i==tar的时候，仍进行了加一操作，所以是目标数字的右边的一个下标
     }
+
+    public static void main(String[] args) {
+
+
+    }
 }
