@@ -15,7 +15,6 @@ public class Offer66 {
         for (int i = 1; i < len; i++) {
             b[i] = b[i - 1] * a[i - 1];
 
-
         }
         for (int i = len - 2; i >= 0; i--) {
             tmp *= a[i + 1];
