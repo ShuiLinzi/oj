@@ -19,4 +19,5 @@ public class LeetCode704 {
         }
         return -1;
     }
+
 }
