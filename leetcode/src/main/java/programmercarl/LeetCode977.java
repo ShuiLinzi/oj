@@ -1,5 +1,5 @@
 package programmercarl;
-
+//双指针解决问题
 public class LeetCode977 {
     public int[] sortedSquares(int[] nums) {
         int left = 0, right = nums.length - 1;
