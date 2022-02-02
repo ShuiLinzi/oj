@@ -1,6 +1,6 @@
 package programmercarl;
 
-public class LeetCode69 {
+public class LeetCode59 {
     public int[][] generateMatrix(int n) {
         int l = 0, r = n - 1, s = 0, x = n - 1;
         int[][] mat = new int[n][n];
