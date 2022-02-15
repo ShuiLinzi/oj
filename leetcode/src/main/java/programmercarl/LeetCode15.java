@@ -31,4 +31,10 @@ public class LeetCode15 {
         return result;
     }
 
+    public static void main(String[] args) {
+        LeetCode15 test = new LeetCode15();
+        int[] arr = {-1, 0, 1, 2, -1, 4};
+        List<List<Integer>> lists = test.threeSum(arr);
+        System.out.println(lists);
+    }
 }
