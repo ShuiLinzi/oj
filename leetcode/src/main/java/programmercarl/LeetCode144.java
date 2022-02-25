@@ -26,4 +26,6 @@ public class LeetCode144 {
         preorder(node.left, res);
         preorder(node.right, res);
     }
+
+    //非递归，迭代写法
 }
