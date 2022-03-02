@@ -10,19 +10,22 @@ public class test {
         String format1 = simpleDateFormat.format(date1);
         System.out.println(format1);
 
-        int[] arr = new int[10000000];
-        for (int i = 0; i < 10000000; i++) {
+        int[] arr = new int[40000000];
+        for (int i = 0; i < 40000000; i++) {
             arr[i] = (int) (Math.random() * 10000000);
         }
-     //  BubbleSort.bubbleSort(arr);
+        //  BubbleSort.bubbleSort(arr);
         //SelectionSort.selectionSort1(arr);
         //InsertionSort.insertionSort(arr);
-       //ShellSort.shellSort(arr);
+       // ShellSort.shellSort(arr);
        ShellSort.shellSort2(arr);
+       // QuickS.quickSort(arr,0,arr.length-1);
+     //   MergeSort.mergeSort(arr);
+       // RadixSort.radixSort(arr);
         Date date2 = new Date();
         String format = simpleDateFormat.format(date2);
-       System.out.println(format);
-//        for (int i = 0; i < 100; i++) {
+        System.out.println(format);
+//        for (int i = 0; i < 10; i++) {
 //            System.out.print(arr[i] + " ");
 //        }
     }

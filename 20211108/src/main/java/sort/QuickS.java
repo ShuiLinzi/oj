@@ -10,7 +10,7 @@ public class QuickS {
 
     public static void quickSort(int[] arr, int L, int R) {//一轮下去大于中心元素的都在右边，小于的都在左边
         if (L < R) {
-            swap(arr, L + (int) (Math.random() * (R - L + 1)), R); //快排3.0,不加这句话时间复杂度为On*n,加了为O(nlogn)
+           // swap(arr, L + (int) (Math.random() * (R - L + 1)), R); //快排3.0,不加这句话时间复杂度为On*n,加了为O(nlogn)
             int p = partition(arr, L, R);//返回的是下标值
             quickSort(arr, L, p - 1);
             quickSort(arr, p + 1, R);

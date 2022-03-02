@@ -2,12 +2,48 @@ package sort;
 
 //基数排序
 public class RadixSort {
+
+
     public static void radixSort(int[] arr) {
-        if (arr == null || arr.length < 2) {
-            return;
+        //1.得到数组中最大的位数
+        int max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        radixSort(arr, 0, arr.length - 1, maxbits(arr));
+        //2.得到最大值的位数
+        int maxLength = (max + "").length();
+        //3.定义桶和表示桶中元素个数
+        int[][] bucket = new int[10][arr.length];
+        int[] bucketCounts = new int[bucket.length];
+        //一共需要进行 maxlength轮
+        for (int k = 1, n = 1; k <= maxLength; k++, n *= 10) {
+            //进行桶排序
+            for (int i = 0; i < arr.length; i++) {
+                int bucketIndex = arr[i] / n % 10;
+                // 放入该桶中
+                bucket[bucketIndex][bucketCounts[bucketIndex]] = arr[i];
+                // 标识该桶元素多了一个
+                bucketCounts[bucketIndex]++;
+            }
+            // 将桶中元素获取出来，放到原数组中
+            int index = 0;
+            for (int i = 0; i < bucket.length; i++) {
+                if (bucketCounts[i] == 0) {
+                    // 该桶无有效元素，跳过不获取
+                    continue;
+                }
+                // 获取桶中有效的个数
+                for (int j = 0; j < bucketCounts[i]; j++) {
+                    arr[index++] = bucket[i][j];
+                }
+                // 取完后，重置该桶的元素个数为 0 ，下一次才不会错乱数据
+                bucketCounts[i] = 0;
+            }
+        }
     }
+
 
     private static void radixSort(int[] arr, int L, int R, int digit) {
         final int radix = 10;
