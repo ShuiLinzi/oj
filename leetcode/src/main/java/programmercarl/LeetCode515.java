@@ -1,32 +1,28 @@
 package programmercarl;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
-public class LeetCode637 {
-    public List<Double> averageOfLevels(TreeNode root) {
-        List<Double> res = new ArrayList<>();
+public class LeetCode515 {
+    public List<Integer> largestValues(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
             queue.offer(root);
         }
         while (!queue.isEmpty()) {
-            double sum = 0.0;
-            int n = queue.size();
-            for (int i = 0; i < n; i++) {
+            List<Integer> temp = new ArrayList<>();
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
                 TreeNode node = queue.poll();
-                sum += node.val;
+                temp.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
-
             }
-            res.add(sum / n);
+            res.add(Collections.max(temp));
         }
         return res;
     }
