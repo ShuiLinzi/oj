@@ -20,6 +20,8 @@ public class LeetCode101 {
         }
         boolean b1 = meger(left.left, right.right);
         boolean b2 = meger(left.right, right.left);
+        StringBuilder sb = new StringBuilder();
+
         return b1 && b2;
     }
 }
