@@ -27,7 +27,7 @@ public class LeetCode77 {
         if (path.size() == k) {
             res.add(new ArrayList<>(path));
             return;
-        }
+        }// 剪枝可以适当优化回溯算法
         for (int i = startIndex; i <= n - (k - path.size()) + 1; i++) {//i<n-(k-path.size())+1,进行了剪枝操作
             path.add(i);
             backtrack(n, k, i + 1);
