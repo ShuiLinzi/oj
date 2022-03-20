@@ -4,10 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class test1 {
     @Test
@@ -35,20 +32,33 @@ public class test1 {
         System.out.println(dayOfMonth);
         System.out.println(localDate);
     }
+
     @Test
-    public void listTest(){
+    public void listTest() {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(1);
         list.add(1);
         System.out.println(list);
-        for(Integer i : list){
+        for (Integer i : list) {
             System.out.println(i);
         }
         Iterator<Integer> iterator = list.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer next = iterator.next();
             System.out.println(next);
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int res = dfs(n);
+        System.out.println(res);
+    }
+
+    static int dfs(int n) {
+        if (n <= 2) return 1;
+        return dfs(n - 2) + dfs(n - 3);
     }
 }
