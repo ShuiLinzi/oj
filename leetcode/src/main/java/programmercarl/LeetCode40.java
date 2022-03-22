@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 这一题和39题有两个区别
+ * 1.本题candidates 中的每个数字在每个组合中只能使用一次。
+ * 2.本题数组candidates的元素是有重复的，而39.组合总和 (opens new window)是无重复元素的数组candidates
+ * 所以解法有点不同
+ */
 class LeetCode40 {
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
