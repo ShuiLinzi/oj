@@ -9,37 +9,39 @@ public class Queen8 {
     public static void main(String[] args) {
 
     }
+
     //放置n个皇后，也是递归的方法
-    private void check(int n ){
-        if (n==max) return;
+    private void check(int n) {
+        if (n == max) return;
         //依次放入皇后，并判断是否冲突
         for (int i = 0; i < max; i++) {
             array[n] = i;
-            if (judeg(n)){
+            if (judeg(n)) {
                 //接着放
-                check(n+1);
+                check(n + 1);
             }
         }
 
     }
 
     //判断当我们存放第n个皇后时，是否符合条件（不同在同一行，同一列，同一斜线）
-    private boolean judeg(int n){
+    private boolean judeg(int n) {
 
         for (int i = 0; i < n; i++) {
             //array[i] == array[n]用来判断前n个皇后和第n个是否在同一列
             //Math.abs(n-i)==Math.abs(array[n]-array[i]) 用来判断前n个皇后和第n个是否在一个斜线上
-            if (array[i] == array[n] || Math.abs(n-i)==Math.abs(array[n]-array[i])){
+            if (array[i] == array[n] || Math.abs(n - i) == Math.abs(array[n] - array[i])) {
                 return false;
             }
 
         }
         return true;
     }
+
     //将皇后摆放的位置输出
-    private void print(){
+    private void print() {
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]+" ");
+            System.out.print(array[i] + " ");
         }
         System.out.println();
 

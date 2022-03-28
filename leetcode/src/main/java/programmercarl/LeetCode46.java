@@ -35,6 +35,12 @@ public class LeetCode46 {
         }
         for (int i = 0; i < nums.length; i++) {
             if (used[i] == true) continue;
+            //方法二：
+            //// 如果path中已有，则跳过
+            //            if (path.contains(nums[i])) {
+            //                continue;
+            //            }
+
             used[i] = true;
             path.add(nums[i]);
             backtrack(nums);
