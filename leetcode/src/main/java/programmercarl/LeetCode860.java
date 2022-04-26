@@ -16,8 +16,8 @@ public class LeetCode860 {
 //        boolean b = lemonadeChange(arr);
 //        System.out.println(b);
         int[] nums = new int[]{0, 2, 1, 4, 3, 5, 6, 7, 8, 9};
-        int judgr = judgr(nums, );
-        System.out.println(judgr);
+     //   int judgr = judgr(nums, );
+     //   System.out.println(judgr);
 
     }
     private static int judgr(int[] nums, int target) {
